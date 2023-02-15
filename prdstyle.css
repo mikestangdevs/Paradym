@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+	--background-primary: #e1e5f8;
+	--background-secondary: #737ccf;
+	--background-tertiary: #e1e5f8;
+	
+	--accent-primary: #bbc4eb;
+	--accent-primary-hover: #3d407f;
+	--accent-secondary: #C8C3E4;
+	--accent-secondary-hover: #aca6c9;
+	--accent-tertiary: #2218a7;
+	--accent-tertiary-hover: #e1e5f8;
+
+	--text-primary: #000;
+	--text-secondary: #494949;
+	--text-tertiary: #e9f3ff;
+	--text-white: #fff;
+
+	--shadow-card: 0 8px 20px #3d407f38;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	max-width: 860px;
+	margin: 64px auto 32px auto;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	padding: 24px;
+	row-gap: 80px;
+}
+
+body, html {
+	font-family: 'Poppins', sans-serif;	
+	color: var(--text-secondary);
+	background: var(--background-primary);
+	scroll-behavior: smooth;
+}
+
+body.no-overflow {
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 58px;
+	font-family: 'DM Serif Display', serif;			
+	color: var(--accent-tertiary);
+}
+
+h2 {
+	font-size: 40px;
+	font-family: 'DM Serif Display', serif;				
+	color: var(--background-secondary);
+	margin-bottom: 16px;
+}
+
+h3 {
+	font-size: 30px;	
+	color: var(--text-primary);
+}
+
+h4 {
+	font-size: 22px;
+	font-weight: 600;
+	color: var(--text-primary);
+}
+
+p {
+	font-size: 18px;
+	margin-bottom: 16px;
+}
+
+a {
+	text-decoration: none;
+	width: fit-content;
+	color: var(--primary-text-color);
+}
+
+a span {
+	transition: color 0.5s;
+	font-size: 18px;
+	transition: color 0.5s;
+}
+
+a:hover span {
+	border-bottom: 2px solid var(--text-primary);
+}
+
+button {
+	background: var(--accent-primary);
+	border-radius: 8px;
+	padding: 8px 32px;
+	color: var(--text-white);
+	border: none;
+	font-family: 'Poppins', sans-serif;	
+	cursor: pointer;
+	/* transition: background 0.5s, border-radius 1s; */
+	transition: background 0.5s, transform 0.5s;
+	display: flex;
+	font-size: 20px;
+	justify-content: center;
+	align-items: center;			
+	margin-top: 32px;
+	width: 200px;
+}
+
+button:hover {
+	background: var(--accent-primary-hover);
+	/* box-shadow: 0 8px 16px #6266b280; */
+	/* transform: scale(0.95); */
+	box-shadow: 0 0 0 0 #3d407f;
+	animation: pulse-button 1.5s infinite;
+}
+
+@keyframes pulse-button {
+	0% {
+		transform: scale(0.97);
+		box-shadow: 0 0 0 0 #3d407f85;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px #3d407f00
+	}
+
+	100% {
+		transform: scale(0.97);
+		box-shadow: 0 0 0 0 #3d407f00
+	}
+}
+
+button.secondary {
+	background: var(--accent-secondary);
+	color: var(--text-primary);
+}
+
+button.secondary:hover {
+	background: var(--accent-secondary-hover);
+	/* box-shadow: 0 8px 16px #C8C3E4; */
+	box-shadow: 0 0 0 0 #c8c3e4;
+	animation: pulse-button-secondary 1.5s infinite;
+}
+
+
+
+@keyframes pulse-button-secondary {
+	0% {
+		transform: scale(0.97);
+		box-shadow: 0 0 0 0 #c8c3e480;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px #c8c3e400;
+	}
+
+	100% {
+		transform: scale(0.97);
+		box-shadow: 0 0 0 0 #c8c3e400;
+	}
+}
+
+.about {
+	background: var(--background-secondary);
+	gap: 64px;
+}
+
+.about .text {
+	width: 50%;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	z-index: 4;
+	width: calc(100% - 64px);
+	height: 80px;
+	padding: 0 32px;
+	transition: 0.5s;
+}
+
+nav.full {
+	height: 100%;
+	background: var(--background-primary);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	opacity: 1;
+	margin: 0;
+	padding-top: 50%;
+}
+
+nav svg:first-child {
+	opacity: 0;
+}
+
+
+nav > * {
+	z-index: 2;
+}
+
+nav .right {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+nav h3 {
+	color: var(--accent-tertiary);
+	font-family: 'DM Serif Display', serif;			
+}
+
+nav .right .links {
+	display: flex;
+	gap: 16px;
+}
+
+nav .right .links a span {
+	font-size: 18px;
+}
+
+nav .right .links a:hover span {
+	color: var(--accent-tertiary);
+	border-bottom: 2px solid var(--accent-tertiary);
+}
+
+nav .right button {
+	width: 120px;
+	height: 40px;
+	margin-top: 0 !important;
+	font-size: 16px;
+}
+
+.download {
+	text-align: center;
+	height: 120vh !important;
+	padding: 0;
+	flex-direction: column;
+	gap: 64px;
+	padding-top: 160px;
+}
+
+.download button {
+	margin-left: auto;
+	margin-right: auto;
+	height: 60px;
+}
+
+.download .text {
+/* 	 */
+}
+
+@media only screen and (max-width: 600px) {
+	section {
+		padding: 64px 32px !important;
+	}
+	
+	footer {
+		padding: 64px 32px;
+	}
+
+	.demo .container {
+		width: 100%;
+		height: 50vh;
+	}
+
+	.demo .container .sign-up {
+		width: 100%;
+	}
+
+	.demo .container .sign-up input {
+		width: 80%;
+		font-size: 18px;
+	}
+
+	.demo .container .sign-up button {
+		width: 30%;
+		font-size: 18px;
+		padding: 0;
+	}
+
+	.reviews .container .review {
+		width: 100%;
+	}
+
+	.pricing .container .card {
+		width: 80% !important;
+	}
+
+	.how .diagram {
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.how .diagram .steps {
+		width: fit-content;
+	}
+
+	.how .diagram .steps .step {
+		width: auto;
+	}
+
+	.how .diagram .text .step {
+		width: 100%;
+	}
+
+	.how img {
+		width: 100%;
+	}	
+
+	.waiting-for img {
+		width: 100%;
+	}
+	
+	.landing .text .buttons {
+		flex-direction: column;
+		gap: 0;
+		align-items: center;
+	}
+
+	.landing .text .buttons button {
+		width: 200px;
+	}
+
+	.about img {
+		width: 100%;
+	}
+
+	.download img {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.demo .container {
+		background: none;
+		animation: none;
+	}
+
+	.demo .container .sign-up input {
+		background: var(--background-secondary);
+	}
+
+	.pricing .container .card {
+		width: 90% !important;
+	}
+	
+	.landing img {
+		width: 100%;
+	} 
+
+	section > * {
+		text-align: center;
+	}
+
+ 	landing h1 {
+		font-size: 52px;
+	}
+	
+	.download .decoration.t-r {
+		top: -100px;
+		right: -100px;
+	}
+	
+	.download .decoration.b-l {
+		margin-top: 100px;
+		margin-left: -100px;
+	}
+
+	h1 {
+		font-size: 52px;
+	}
+
+	h2 {
+		font-size: 42px;
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	button {
+		font-size: 18px;
+	}
+}
+
+li {
+	margin-left: 50px;
+	font-size: 16px;
+}
