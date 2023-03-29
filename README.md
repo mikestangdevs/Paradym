@@ -4,7 +4,7 @@
 
 Meet Paradym, A secure camera for a secure life.
 
-A mock-up smart home/home security camera product that can bring safety back into your home again. 
+A mock-up smart home/home security camera product that will bring safety into your home. 
 
 <img width="1335" alt="homescreen" src="https://user-images.githubusercontent.com/104747065/219138243-a888866b-c7db-4a11-9648-fae8e6f9b331.png">
 
