@@ -99,6 +99,7 @@ button {
 	justify-content: center;
 	align-items: center;			
 	margin-top: 32px;
+
 	width: 200px;
 }
 
@@ -304,7 +305,8 @@ nav .right button {
 
 .landing .text .buttons {
 	display: flex;
-	gap: 32px;
+	gap: 16px;
+	padding-bottom: 80px;
 }
 
 .landing img {
